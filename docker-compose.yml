@@ -1,0 +1,40 @@
+# =============================================================================
+# Triton Docker Compose
+# =============================================================================
+#   docker compose up -d triton
+#   docker compose logs -f triton
+#   docker compose down
+# =============================================================================
+
+services:
+  triton:
+    image: nvcr.io/nvidia/tritonserver:26.01-py3
+    container_name: triton-server
+    ports:
+      - "8000:8000"
+      - "8001:8001"
+      - "8002:8002"
+    volumes:
+      - ./export/triton_model_repository:/models:ro
+    command: >
+      tritonserver
+      --model-repository=/models
+      --log-verbose=1
+      --model-control-mode=none
+    shm_size: 4gb
+    restart: unless-stopped
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/v2/health/ready"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+      start_period: 30s
+    environment:
+      - NVIDIA_VISIBLE_DEVICES=all

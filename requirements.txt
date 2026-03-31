@@ -1,0 +1,20 @@
+# Core
+numpy>=1.24.0
+opencv-python>=4.8.0
+
+# YOLO
+ultralytics>=8.0.0
+
+# ONNX
+onnx>=1.14.0
+
+# Triton client
+tritonclient[all]>=2.40.0
+
+# Video encoding (GPU: NVENC, CPU: libx264)
+imageio-ffmpeg>=0.4.9
+
+# GPU dependencies — install separately for your setup:
+# pip3 install torch torchvision --index-url https://download.pytorch.org/whl/cu130
+# pip install tensorrt pycuda
+# pip install onnxruntime-gpu
