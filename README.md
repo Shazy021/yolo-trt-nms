@@ -5,37 +5,16 @@ YOLO to TensorRT export and high-performance inference with built-in NMS.
 Two modes: standalone `.engine` file and NVIDIA Triton Inference Server. Threading pipeline with batching for maximum GPU utilization.
 
 ## Demo
+>  ⚠️ Video examples are compressed for preview. Original recordings are available in `assets/`.
 
-<table>
-  <tr>
-    <th align="center">Local</th>
-    <th align="center">Triton</th>
-  </tr>
-  <tr>
-    <td align="center">
-      <video width="100%" controls>
-        <source src="./assets/moto1_local.mp4" type="video/mp4">
-      </video><br>
-    </td>
-    <td align="center">
-      <video width="100%" controls>
-        <source src="./assets/moto1_triton.mp4" type="video/mp4">
-      </video><br>
-    </td>
-  </tr>
-  <tr>
-    <td align="center">
-      <video width="100%" controls>
-        <source src="./assets/moto2_local.mp4" type="video/mp4">
-      </video><br>
-    </td>
-    <td align="center">
-      <video width="100%" controls>
-        <source src="./assets/moto2_triton.mp4" type="video/mp4">
-      </video><br>
-    </td>
-  </tr>
-</table>
+https://github.com/user-attachments/assets/761ff519-f6b1-494a-a35a-20dfa02a463a
+
+https://github.com/user-attachments/assets/0add4ac6-f096-4959-8a11-144dc66f7953
+
+
+
+
+
 
 ## Threading Pipeline
 
