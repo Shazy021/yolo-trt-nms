@@ -17,7 +17,7 @@ class ExportConfig:
     triton_model_version: int = 1
 
     # common
-    model: str = "yolo11l"
+    model: str = "yolo11m"
     model_path: str | None = None
     height: int = 640
     width: int = 640

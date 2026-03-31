@@ -97,10 +97,10 @@ python export.py --model-path my_custom_yolo.pt --mode triton
 | `--height` / `--width` | Input resolution | 640 |
 | `--fp32` | FP32 instead of FP16 | FP16 |
 | `--iou` | NMS IoU threshold | 0.45 |
-| `--score` | NMS score threshold | 0.5 |
+| `--score` | NMS score threshold | 0.3 |
 | `--max-det` | Max detections per image | 100 |
 | `--static-batch` | Disable dynamic batching | dynamic |
-| `--min-batch` / `--max-batch` / `--opt-batch` | Batch sizes | 1 / 16 / 4 |
+| `--min-batch` / `--max-batch` / `--opt-batch` | Batch sizes | 1 / 16 / 8 |
 | `--workspace` | TRT workspace in GB | 8 |
 | `--output` | Output directory | `./export` |
 
@@ -123,12 +123,11 @@ python inference_local.py --model export/yolo11m.engine --source video.mp4 --out
 
 | Parameter | Description | Default |
 |---|---|---|
+| `--model` | Path to .engine file | required |
 | `--source` | Video, camera (0,1...), or RTSP stream | required |
-| `--url` | Triton gRPC URL | localhost:8001 |
-| `--model` | Model name on Triton | yolo_detector |
+| `--batch` | Batch size (auto if not set) | model default |
 | `--conf` | Min confidence to draw | 0.5 |
-| `--batch` | Client-side batch size (1=disabled) | 1 |
-| `--output` | Output video file path | — |
+| `--output` | Output video file | — |
 | `--no-show` | Disable display window | show |
 
 
