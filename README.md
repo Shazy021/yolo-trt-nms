@@ -1,8 +1,6 @@
 # YOLO TensorRT + Triton Inference Server
 
-YOLO to TensorRT export and high-performance inference with built-in NMS.
-
-Two modes: standalone `.engine` file and NVIDIA Triton Inference Server. Threading pipeline with batching for maximum GPU utilization.
+**One-command YOLO → TensorRT export** with GPU-accelerated NMS baked into the graph.
 
 ## Demo
 >  ⚠️ Video examples are compressed for preview. Original recordings are available in `assets/`.
